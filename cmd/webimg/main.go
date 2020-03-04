@@ -84,6 +84,13 @@ func main() {
 			} else {
 				fmt.Println("No image given to watermark!")
 			}
+		case "resize":
+			doResize := webimg.Resize("smplayer_preferences.jpg", "smplayer_preferences_resize.jpg", 200, 0)
+			if doResize != nil {
+				fmt.Println("There was an error watermarking image...")
+			} else {
+				fmt.Println("Image resized.")
+			}
 		default:
 			fmt.Println("Wrong subcommand provided!")
 		}
